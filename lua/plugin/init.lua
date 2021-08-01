@@ -20,7 +20,7 @@ require('packer').startup(
 		-- Syntax
 		use {
 			'JuliaEditorSupport/julia-vim',
-			ft = {'julia'}
+			ft = {'julia'},
 		}
 		use {
 			'lervag/vimtex',
@@ -29,16 +29,14 @@ require('packer').startup(
 
 		-- Tools
 		use 'unblevable/quick-scope'
+		use 'numToStr/Navigator.nvim'
 
 		-- LSP & Autocomplete
 		use 'hrsh7th/nvim-compe'
+		use 'nvim-treesitter/nvim-treesitter'
 		use {
 			'neovim/nvim-lspconfig',
 			ft = { 'julia' }
-		}
-		use {
-			'nvim-treesitter/nvim-treesitter',
-			ft = { 'julia', 'python' }
 		}
 	end,
 
@@ -48,5 +46,7 @@ require('packer').startup(
 })
 
 -- Installed packages configurations
-require('plugin/nvim-compe')
 require('plugin/nvim-treesitter')
+require('plugin/nvim-compe')
+require('plugin/Navigator')
+require('plugin/quick-scope')
